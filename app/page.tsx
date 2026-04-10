@@ -143,24 +143,26 @@ export default function LandingPage() {
       <div className="fixed inset-0 pointer-events-none z-50 opacity-[0.03] bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:100%_4px]" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-[60] px-6 py-6 backdrop-blur-xl bg-black/40 border-b border-purple-500/20">
+      <nav className="fixed top-0 left-0 right-0 z-[60] px-4 md:px-6 py-4 md:py-6 backdrop-blur-xl bg-black/40 border-b border-purple-500/20">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-2 md:gap-3"
           >
-            <div className="w-10 h-10 rounded-xl bg-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] border border-purple-400/30">
-              <Dna className="text-white w-6 h-6 animate-pulse" />
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] border border-purple-400/30">
+              <Dna className="text-white w-5 h-5 md:w-6 md:h-6 animate-pulse" />
             </div>
-            <span className="font-black text-2xl tracking-tighter text-[var(--pg-foreground)]">PHARMA<span className="text-purple-500">GUARD</span></span>
+            <span className="font-black text-lg md:text-2xl tracking-tighter text-[var(--pg-foreground)]">PHARMA<span className="text-purple-500">GUARD</span></span>
           </motion.div>
           
-          <div className="hidden md:flex items-center gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-gray-400">
+          <div className="hidden lg:flex items-center gap-10 text-[11px] font-black uppercase tracking-[0.3em] text-gray-400">
             <a href="#features" className="hover:text-purple-400 transition-all hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">Protocol</a>
             <a href="#tech" className="hover:text-purple-400 transition-all hover:drop-shadow-[0_0_8px_rgba(168,85,247,0.8)]">Intelligence</a>
             <a href="#secure" className="hover:text-purple-400 transition-all hover:drop-shadow-[0_0_8_rgba(168,85,247,0.8)]">Shield</a>
-            
+          </div>
+
+          <div className="flex items-center gap-4">
             <motion.button 
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -169,17 +171,17 @@ export default function LandingPage() {
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </motion.button>
-          </div>
 
-          <Link href="/login">
-            <motion.button 
-              whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(168,85,247,0.6)" }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-purple-600 text-white rounded-full text-[10px] font-black uppercase tracking-widest border border-purple-400/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all"
-            >
-              Initialize Node
-            </motion.button>
-          </Link>
+            <Link href="/login">
+              <motion.button 
+                whileHover={{ scale: 1.05, boxShadow: "0 0 25px rgba(168,85,247,0.6)" }}
+                whileTap={{ scale: 0.95 }}
+                className="hidden sm:block px-6 md:px-8 py-2 md:py-3 bg-purple-600 text-white rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-widest border border-purple-400/50 shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all"
+              >
+                Initialize Node
+              </motion.button>
+            </Link>
+          </div>
         </div>
       </nav>
 
@@ -249,7 +251,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.85] mb-12 neon-text text-[var(--pg-foreground)] relative"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-[0.9] sm:leading-[0.85] mb-8 md:mb-12 neon-text text-[var(--pg-foreground)] relative"
           >
             <motion.span
               animate={{ 
@@ -302,16 +304,16 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6"
           >
-            <Link href="/login">
-              <button className="group relative px-12 py-5 bg-purple-600 text-white rounded-2xl text-[12px] font-black uppercase tracking-[0.3em] shadow-[0_20px_40px_rgba(168,85,247,0.3)] hover:shadow-[0_0_50px_rgba(168,85,247,0.6)] hover:bg-purple-500 transition-all flex items-center gap-4 overflow-hidden">
+            <Link href="/login" className="w-full sm:w-auto">
+              <button className="w-full group relative px-8 md:px-12 py-4 md:py-5 bg-purple-600 text-white rounded-2xl text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] shadow-[0_20px_40px_rgba(168,85,247,0.3)] hover:shadow-[0_0_50px_rgba(168,85,247,0.6)] hover:bg-purple-500 transition-all flex items-center justify-center gap-4 overflow-hidden">
                 <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent,rgba(255,255,255,0.2),transparent)] -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 Start Analysis
                 <Zap className="w-4 h-4 fill-current group-hover:scale-125 transition-transform" />
               </button>
             </Link>
-            <button className="px-12 py-5 bg-transparent border border-purple-500/40 text-purple-600 rounded-2xl text-[12px] font-black uppercase tracking-[0.3em] hover:bg-purple-600 hover:text-white transition-all shadow-[inset_0_0_15px_rgba(168,85,247,0.1)]">
+            <button className="w-full sm:w-auto px-8 md:px-12 py-4 md:py-5 bg-transparent border border-purple-500/40 text-purple-600 rounded-2xl text-[10px] md:text-[12px] font-black uppercase tracking-[0.2em] md:tracking-[0.3em] hover:bg-purple-600 hover:text-white transition-all shadow-[inset_0_0_15px_rgba(168,85,247,0.1)]">
               Clinical Specs
             </button>
           </motion.div>
@@ -325,9 +327,9 @@ export default function LandingPage() {
       </section>
 
       {/* Grid Stats */}
-      <section className="py-24 bg-black border-y border-purple-900/30">
+      <section className="py-12 md:py-24 bg-black border-y border-purple-900/30">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
             {[
               { label: "GENE TARGETS", value: "300+", icon: <Dna /> },
               { label: "AI CONFIDENCE", value: "99.8%", icon: <BrainCircuit /> },
@@ -337,13 +339,13 @@ export default function LandingPage() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -5 }}
-                className="p-8 bg-purple-900/5 rounded-3xl border border-purple-500/10 shadow-[inner_0_0_20px_rgba(168,85,247,0.05)] text-center relative overflow-hidden group"
+                className="p-6 md:p-8 bg-purple-900/5 rounded-2xl md:rounded-3xl border border-purple-500/10 shadow-[inner_0_0_20px_rgba(168,85,247,0.05)] text-center relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-[0.15] transition-opacity">
-                  {React.cloneElement(stat.icon, { className: "w-12 h-12 text-purple-500" })}
+                  {React.cloneElement(stat.icon, { className: "w-8 h-8 md:w-12 md:h-12 text-purple-500" })}
                 </div>
-                <h4 className="text-5xl font-black text-white tracking-tighter mb-2 group-hover:text-purple-400 transition-colors">{stat.value}</h4>
-                <p className="text-[9px] font-black text-purple-500 uppercase tracking-[0.4em]">{stat.label}</p>
+                <h4 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-2 group-hover:text-purple-400 transition-colors">{stat.value}</h4>
+                <p className="text-[8px] md:text-[9px] font-black text-purple-500 uppercase tracking-[0.3em] md:tracking-[0.4em]">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -467,22 +469,22 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Neon CTA */}
-      <section className="py-40 bg-black relative border-t border-purple-900/50">
+       {/* Neon CTA */}
+      <section className="py-20 md:py-40 bg-black relative border-t border-purple-900/50">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.15),transparent_70%)]" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
            <motion.div
              initial={{ opacity: 0, y: 30 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="space-y-12"
+             className="space-y-8 md:space-y-12"
            >
-              <h2 className="text-6xl md:text-8xl font-black tracking-tighter leading-[0.85]">ELEVATE YOUR<br/>DIAGNOSTICS.</h2>
-              <p className="text-gray-400 text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+              <h2 className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-[1] md:leading-[0.85]">ELEVATE YOUR<br/>DIAGNOSTICS.</h2>
+              <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
                  Join the protocol. Deploy PharmaGuard in your clinical workflow and eliminate medication risk with AI-enhanced precision.
               </p>
               <Link href="/login">
-                <button className="px-16 py-6 bg-transparent border-2 border-purple-600 text-purple-400 rounded-3xl text-[14px] font-black uppercase tracking-[0.4em] hover:bg-purple-600 hover:text-white hover:shadow-[0_0_60px_rgba(168,85,247,0.6)] transition-all duration-500">
+                <button className="px-10 md:px-16 py-4 md:py-6 bg-transparent border-2 border-purple-600 text-purple-400 rounded-2xl md:rounded-3xl text-[12px] md:text-[14px] font-black uppercase tracking-[0.3em] md:tracking-[0.4em] hover:bg-purple-600 hover:text-white hover:shadow-[0_0_60px_rgba(168,85,247,0.6)] transition-all duration-500">
                    Access Protocol
                 </button>
               </Link>

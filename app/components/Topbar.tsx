@@ -58,7 +58,7 @@ export function Topbar({ onMenuClick, alerts = [] }: { onMenuClick?: () => void;
                 className="fixed inset-0 z-[-1]" 
                 onClick={() => setIsNotificationsOpen(false)}
               />
-              <div className="absolute top-full right-0 mt-4 w-[380px] bg-surface-container-lowest border border-outline-variant/20 rounded-2xl shadow-[0px_32px_64px_rgba(0,0,0,0.4)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+              <div className="absolute top-full right-0 mt-4 w-[calc(100vw-2rem)] sm:w-[380px] bg-surface-container-lowest border border-outline-variant/20 rounded-2xl shadow-[0px_32px_64px_rgba(0,0,0,0.4)] overflow-hidden animate-in fade-in zoom-in-95 duration-200">
                 <div className="p-4 border-b border-outline-variant/10 bg-primary/5 flex justify-between items-center">
                   <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">Clinical Alerts</h3>
                   {unreadCount > 0 && (

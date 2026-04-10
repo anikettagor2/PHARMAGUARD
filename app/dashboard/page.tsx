@@ -151,7 +151,7 @@ export default function Dashboard() {
       </div>
 
       {/* ---- Bottom Section: Cluster + Insights ---- */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {/* Cluster Bars */}
         <ClusterBars
           title="Risk Distribution"
