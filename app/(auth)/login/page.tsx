@@ -35,7 +35,7 @@ export default function Login() {
         animate={{ opacity: 1, y: 0 }}
         className="max-w-md w-full relative z-10"
       >
-        <div className="bg-[#0c0c0c] p-10 rounded-[40px] border border-purple-900/40 shadow-[0_0_50px_rgba(0,0,0,1)] backdrop-blur-xl">
+        <div className="bg-[#0c0c0c] p-6 sm:p-10 rounded-[40px] border border-purple-900/40 shadow-[0_0_50px_rgba(0,0,0,1)] backdrop-blur-xl">
           <div className="flex justify-center mb-10">
               <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center shadow-[0_0_20px_rgba(168,85,247,0.5)] border border-purple-400/30">
                   <Dna className="w-8 h-8 text-white animate-pulse" />

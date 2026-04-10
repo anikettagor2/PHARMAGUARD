@@ -80,7 +80,7 @@ export default function SettingsPage() {
                 </section>
 
                 {/* Security Section */}
-                <section className="p-8 bg-error/5 rounded-2xl border border-error/10 flex items-center justify-between">
+                <section className="p-8 bg-error/5 rounded-2xl border border-error/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div className="flex gap-4">
                         <span className="material-symbols-outlined text-error">security</span>
                         <div>

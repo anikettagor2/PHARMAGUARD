@@ -128,9 +128,9 @@ export function VariantTable({
                 <div className={`w-10 h-10 rounded-lg ${colors.bg} flex items-center justify-center ${colors.icon} shrink-0`}>
                   <span className="material-symbols-outlined">{riskIconMap[v.risk] ?? "help"}</span>
                 </div>
-                <div>
-                  <p className="text-sm font-bold text-primary">{v.gene} — <span className="font-mono font-normal">{v.mutation}</span></p>
-                  <p className="text-xs text-on-surface-variant">{v.significance.replace(/_/g, ' ')}</p>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-primary truncate">{v.gene} — <span className="font-mono font-normal">{v.mutation}</span></p>
+                  <p className="text-xs text-on-surface-variant truncate">{v.significance.replace(/_/g, ' ')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-6">
@@ -150,7 +150,7 @@ export function VariantTable({
             </div>
 
             {isExpanded && (
-              <div className="bg-surface px-8 py-6 border-l-2 border-secondary">
+              <div className="bg-surface px-4 sm:px-8 py-6 border-l-2 border-secondary">
                 <div className="grid lg:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-[10px] font-bold text-secondary uppercase tracking-widest mb-2">Clinical Recommendation</h4>
