@@ -402,7 +402,7 @@ export default function LandingPage() {
                 className={`p-10 bg-purple-900/10 rounded-[40px] border border-purple-500/20 group hover:bg-purple-900/20 transition-all ${feature.glow}`}
               >
                 <div className="w-16 h-16 rounded-2xl bg-purple-600/20 flex items-center justify-center mb-8 border border-purple-500/30 group-hover:bg-purple-600 transition-all">
-                  {React.cloneElement(feature.icon as React.ReactElement, { className: "w-8 h-8 text-purple-400 group-hover:text-white" })}
+                  {React.cloneElement(feature.icon as React.ReactElement<any>, { className: "w-8 h-8 text-purple-400 group-hover:text-white" })}
                 </div>
                 <h4 className="text-2xl font-black mb-4 tracking-tight group-hover:text-purple-400 transition-colors">{feature.title}</h4>
                 <p className="text-gray-400 text-sm leading-relaxed font-medium">{feature.desc}</p>
