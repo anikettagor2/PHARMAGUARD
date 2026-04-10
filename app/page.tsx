@@ -342,7 +342,7 @@ export default function LandingPage() {
                 className="p-6 md:p-8 bg-purple-900/5 rounded-2xl md:rounded-3xl border border-purple-500/10 shadow-[inner_0_0_20px_rgba(168,85,247,0.05)] text-center relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05] group-hover:opacity-[0.15] transition-opacity">
-                  {React.cloneElement(stat.icon, { className: "w-8 h-8 md:w-12 md:h-12 text-purple-500" })}
+                   {React.cloneElement(stat.icon as React.ReactElement<any>, { className: "w-8 h-8 md:w-12 md:h-12 text-purple-500" })}
                 </div>
                 <h4 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-2 group-hover:text-purple-400 transition-colors">{stat.value}</h4>
                 <p className="text-[8px] md:text-[9px] font-black text-purple-500 uppercase tracking-[0.3em] md:tracking-[0.4em]">{stat.label}</p>
