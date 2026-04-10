@@ -72,8 +72,8 @@ export default function AlertsPage() {
                     </div>
                 ) : (
                     <div className="divide-y divide-outline-variant/10">
-                        {criticalVariants.map(v => (
-                            <div key={v.id} className="p-6 flex items-center justify-between group hover:bg-error/[0.02] transition-colors">
+                        {criticalVariants.map((v, index) => (
+                            <div key={v.id || `critical-${index}`} className="p-6 flex items-center justify-between group hover:bg-error/[0.02] transition-colors">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center text-error shrink-0">
                                         <span className="material-symbols-outlined">priority_high</span>
@@ -116,8 +116,8 @@ export default function AlertsPage() {
                     </div>
                 ) : (
                     <div className="divide-y divide-outline-variant/10">
-                        {interventionVariants.map(v => (
-                            <div key={v.id} className="p-6 flex items-center justify-between group hover:bg-tertiary/[0.02] transition-colors">
+                        {interventionVariants.map((v, index) => (
+                            <div key={v.id || `intervention-${index}`} className="p-6 flex items-center justify-between group hover:bg-tertiary/[0.02] transition-colors">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary shrink-0">
                                         <span className="material-symbols-outlined">tune</span>
@@ -152,8 +152,8 @@ export default function AlertsPage() {
                         <h3 className="text-sm font-bold uppercase tracking-widest text-primary">System Notification History</h3>
                     </div>
                     <div className="divide-y divide-outline-variant/10">
-                        {alerts.map(alert => (
-                            <div key={alert.id} className={`p-6 flex items-center justify-between group transition-colors ${alert.read ? 'bg-surface-container-high/30 opacity-60' : 'hover:bg-surface-container-high'}`}>
+                        {alerts.map((alert, index) => (
+                            <div key={alert.id || `alert-${index}`} className={`p-6 flex items-center justify-between group transition-colors ${alert.read ? 'bg-surface-container-high/30 opacity-60' : 'hover:bg-surface-container-high'}`}>
                                 <div className="flex items-center gap-4">
                                     <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${alert.read ? 'bg-surface-variant text-on-surface-variant' : 'bg-primary/10 text-primary'}`}>
                                         <span className="material-symbols-outlined">{alert.read ? 'notifications_paused' : 'notifications'}</span>
