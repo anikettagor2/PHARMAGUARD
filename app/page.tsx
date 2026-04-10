@@ -25,6 +25,47 @@ import { useTheme } from "@/context/ThemeContext";
 const NEON_PURPLE = "#A855F7";
 const DEEP_BLACK = "#000000";
 
+interface Stat {
+  label: string;
+  value: string;
+  icon: React.ReactElement<any>;
+}
+
+interface Feature {
+  icon: React.ReactElement<any>;
+  title: string;
+  desc: string;
+  glow: string;
+}
+
+const stats: Stat[] = [
+  { label: "GENE TARGETS", value: "300+", icon: <Dna /> },
+  { label: "AI CONFIDENCE", value: "99.8%", icon: <BrainCircuit /> },
+  { label: "LATENCY MS", value: "120", icon: <Zap /> },
+  { label: "ACCURACY", value: "99.9%", icon: <Crosshair /> }
+];
+
+const features: Feature[] = [
+  { 
+    icon: <Stethoscope />, 
+    title: "Clinician Hub", 
+    desc: "Unified patient registry with zero-alert noise floor. Optimized for diagnostic efficiency.",
+    glow: "shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+  },
+  { 
+    icon: <BrainCircuit />, 
+    title: "LLM Reasoning", 
+    desc: "Direct integration with Gemini 2.0 to provide biological context for mutation severity.",
+    glow: "shadow-[0_0_30px_rgba(168,85,247,0.25)]"
+  },
+  { 
+    icon: <HeartPulse />, 
+    title: "Vital Monitoring", 
+    desc: "Real-time pharmacokinetic impact assessments for critical dosage management.",
+    glow: "shadow-[0_0_30px_rgba(168,85,247,0.15)]"
+  }
+];
+
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -330,12 +371,7 @@ export default function LandingPage() {
       <section className="py-12 md:py-24 bg-black border-y border-purple-900/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
-            {[
-              { label: "GENE TARGETS", value: "300+", icon: <Dna /> },
-              { label: "AI CONFIDENCE", value: "99.8%", icon: <BrainCircuit /> },
-              { label: "LATENCY MS", value: "120", icon: <Zap /> },
-              { label: "ACCURACY", value: "99.9%", icon: <Crosshair /> }
-            ].map((stat, i) => (
+            {stats.map((stat, i) => (
               <motion.div 
                 key={i}
                 whileHover={{ y: -5 }}
@@ -375,26 +411,7 @@ export default function LandingPage() {
             viewport={{ once: true }}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {[
-              { 
-                icon: <Stethoscope />, 
-                title: "Clinician Hub", 
-                desc: "Unified patient registry with zero-alert noise floor. Optimized for diagnostic efficiency.",
-                glow: "shadow-[0_0_30px_rgba(168,85,247,0.15)]"
-              },
-              { 
-                icon: <BrainCircuit />, 
-                title: "LLM Reasoning", 
-                desc: "Direct integration with Gemini 2.0 to provide biological context for mutation severity.",
-                glow: "shadow-[0_0_30px_rgba(168,85,247,0.25)]"
-              },
-              { 
-                icon: <HeartPulse />, 
-                title: "Vital Monitoring", 
-                desc: "Real-time pharmacokinetic impact assessments for critical dosage management.",
-                glow: "shadow-[0_0_30px_rgba(168,85,247,0.15)]"
-              }
-            ].map((feature, i) => (
+            {features.map((feature, i) => (
               <motion.div 
                 key={i}
                 variants={fadeIn}
