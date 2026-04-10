@@ -84,6 +84,7 @@ export async function processAndSaveVariants(
           userId:    v.userId!,
           createdAt: Date.now(),
           read:      false,
+          patientId: v.patientId,
         };
         batch.set(alertRef, alertData);
       }
@@ -98,6 +99,7 @@ export async function processAndSaveVariants(
           userId:    v.userId!,
           createdAt: Date.now(),
           read:      false,
+          patientId: v.patientId,
         };
         batch.set(alertRef, alertData);
       }

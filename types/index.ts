@@ -42,6 +42,7 @@ export interface Alert {
   userId: string;
   createdAt: number;
   read: boolean;
+  patientId?: string;
 }
 
 export interface UserData {
