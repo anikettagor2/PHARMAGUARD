@@ -5,14 +5,14 @@ import { getStorage } from "firebase/storage";
 import { getAnalytics, isSupported } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDk5gwNjJJYfRtAs540q_acwhYgZzMUGn8",
-  authDomain: "vidcheck-3c3bc.firebaseapp.com",
-  databaseURL: "https://vidcheck-3c3bc-default-rtdb.firebaseio.com",
-  projectId: "vidcheck-3c3bc",
-  storageBucket: "vidcheck-3c3bc.firebasestorage.app",
-  messagingSenderId: "785391713841",
-  appId: "1:785391713841:web:9b5064429a23dbc7e89f10",
-  measurementId: "G-YJ4PVFKL90"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
