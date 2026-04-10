@@ -174,7 +174,7 @@ export default function AlertsPage() {
                                     </div>
                                     {!alert.read && (
                                         <button 
-                                            onClick={() => handleDismiss(alert.id)}
+                                            onClick={() => alert.id && handleDismiss(alert.id)}
                                             className="px-4 py-2 text-on-surface-variant border border-outline-variant rounded text-[10px] font-black uppercase tracking-widest hover:text-primary hover:border-primary transition-all"
                                         >
                                             DISMISS
