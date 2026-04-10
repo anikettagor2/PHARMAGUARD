@@ -12,7 +12,7 @@ export function AlertToast({ alerts }: { alerts: Alert[] }) {
     // 1. Filter and Deduplicate
     const uniqueMessages = new Set();
     const currentUnread = alerts
-      .filter(a => !a.read && !dismissedIds.has(a.id))
+      .filter(a => a.id && !a.read && !dismissedIds.has(a.id))
       .filter(a => {
         if (uniqueMessages.has(a.message)) return false;
         uniqueMessages.add(a.message);
@@ -26,7 +26,7 @@ export function AlertToast({ alerts }: { alerts: Alert[] }) {
     const activeTimers: NodeJS.Timeout[] = [];
     currentUnread.forEach((alert) => {
       const timerId = setTimeout(() => {
-        handleDismiss(alert.id);
+        if (alert.id) handleDismiss(alert.id);
       }, 10000);
       activeTimers.push(timerId);
     });
@@ -83,7 +83,7 @@ export function AlertToast({ alerts }: { alerts: Alert[] }) {
                     <p className="text-sm text-on-surface-variant line-clamp-2">{alert.message}</p>
                 </div>
                 <button 
-                  onClick={() => handleDismiss(alert.id)}
+                  onClick={() => alert.id && handleDismiss(alert.id)}
                   className="material-symbols-outlined text-on-surface-variant/40 hover:text-on-surface text-lg cursor-pointer transition-colors"
                 >
                   close
