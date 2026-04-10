@@ -9,7 +9,6 @@ const riskIconMap: Record<string, string> = {
   Toxic: "priority_high",
   "Adjust Dosage": "tune",
   Ineffective: "block",
-  Monitor: "monitor_heart",
   Safe: "verified",
   Unknown: "help",
 };
@@ -32,12 +31,6 @@ const riskColorMap: Record<string, { bg: string; icon: string; badge: string; ba
     icon: "text-error",
     badge: "bg-error/10 text-error",
     badgeText: "INEFFECTIVE",
-  },
-  Monitor: {
-    bg: "bg-tertiary/10",
-    icon: "text-tertiary",
-    badge: "bg-tertiary/10 text-tertiary",
-    badgeText: "MONITOR",
   },
   Safe: {
     bg: "bg-secondary/10",

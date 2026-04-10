@@ -191,7 +191,7 @@ export default function Dashboard() {
                   iconBg="bg-secondary/10"
                   iconColor="text-secondary"
                   title="No Critical Findings"
-                  subtitle="All analyzed variants are within safe or monitor thresholds."
+                  subtitle="All analyzed variants are within safe, adjustment, or unknown thresholds."
                   badgeLabel="Status"
                   badgeValue="CLEAR"
                   badgeColor="text-secondary"
@@ -318,4 +318,3 @@ export default function Dashboard() {
     </DashboardLayout>
   );
 }
-

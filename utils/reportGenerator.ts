@@ -13,7 +13,7 @@ export const generateClinicalPDF = (
   doctorName: string,
   options?: PDFOptions
 ) => {
-  const doc = jsPDF();
+  const doc = new jsPDF();
   const pageWidth = doc.internal.pageSize.getWidth();
 
   // --- Header ---
@@ -51,8 +51,8 @@ export const generateClinicalPDF = (
     theme: 'plain',
     styles: { fontSize: 10, cellPadding: 2 },
     columnStyles: { 
-      0: { fontStyle: 'bold', width: 30 },
-      2: { fontStyle: 'bold', width: 30 }
+      0: { fontStyle: 'bold', cellWidth: 30 },
+      2: { fontStyle: 'bold', cellWidth: 30 }
     }
   });
 
@@ -154,7 +154,7 @@ export const generateClinicalPDF = (
         theme: 'plain',
         styles: { fontSize: 9, cellPadding: 1 },
         columnStyles: {
-          0: { fontStyle: 'bold', width: 40 },
+          0: { fontStyle: 'bold', cellWidth: 40 },
           1: { cellWidth: pageWidth - 80 }
         }
       });

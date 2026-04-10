@@ -61,7 +61,6 @@ export function useRealtimeData(userId: string | undefined) {
     const stats = {
         total: variants.length,
         safe: variants.filter(v => v.risk === 'Safe').length,
-        monitor: variants.filter(v => v.risk === 'Monitor').length,
         toxic: variants.filter(v => v.risk === 'Toxic').length,
         adjustDosage: variants.filter(v => v.risk === 'Adjust Dosage').length,
         ineffective: variants.filter(v => v.risk === 'Ineffective').length,
